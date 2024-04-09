@@ -16,68 +16,17 @@ The language is very similare to C and Python so you shouldn't feel lost, howeve
 
 ## Setup Flutter on your machine
 
-First, go to [this link](https://docs.flutter.dev/get-started/install) and follow the instructions to download Flutter on your machine for **VS Code**, it will be easier to use than Android Studio.<br/>
-If you already have Android Studio installed, it's better to use it, just follow the instructions in the documentation for informations on how to setup and launch a new project in Flutter.
+The setup of **Flutter** is quite tricky and long, but you need everything to be installed and ready to start doing the workshop. Go check the **[Setup Guide](./Setup.md)** for **Flutter** before starting.
 
-Assuming you are using a Linux OS, you can set it up like so:
+## Exercise 0
 
-### 1. Mandatory files
-- Make sure those packages are installed on your machine: **curl**, **git**, **unzip**, **xz-utils**, **zip**, **libglu1-mesa**<br/>
-(if you're using the OS version given by EPITECH, they are already installed)
-```sh
-sudo apt-get update -y && sudo apt-get upgrade -y;
-sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
-```
-
-### 2. Install Flutter
-- Go to the tab **Download and install**<br/>
-![Download and install tab](./readme-assets/flutter_download.png)<br/>
-- Then click the download button to install Flutter zipped file.<br/>
-- Create a folder where you can install Flutter, best place to do it is `/usr/bin/`
-- Extract the file into the directory with the following command:
-```sh
-sudo tar -xf ~/Downloads/flutter_linux_3.19.5-stable.tar.xz -C /usr/bin/
-```
-- Add the folder to your **env**.
-```sh
-For bash:
-echo 'export PATH="/usr/bin/flutter/bin:$PATH"' >> ~/.bash_profile
-```
-```sh
-For zsh:
-echo 'export PATH="/usr/bin/flutter/bin:$PATH"' >> ~/.zshenv
-```
-- Then type this command to reload you terminal, or close it and open it again
-```sh
-source ~/.bash_profile
-Or
-source ~/.zshenv
-```
-- To check if Flutter was correctly installed, type this command in your terminal:
-```sh
-flutter doctor
-```
-- There will be errors but we only care about the fact that **Flutter**, **Android Toolchain** and **VS Code** are okay. For now, **Android Toolchain** is not setup yet. It should display you something similar to that:
-![Flutter doctor](./readme-assets/flutter_doctor.png)
-
-### 3. Setup Android SDK
-- To develop Android apps, we first need to setup the **Android SDK**. We will need to install **Android Studio** for that.
-- Go to [this page](https://developer.android.com/studio) and click **Download Android Studio Iguana**.
-- Extract the file like you did for **Flutter SDK** in the previous part.
-```sh
-sudo tar -xf ~/Downloads/android-studio-2023.2.1.24-linux.tar.gz -C /usr/bin/
-```
-- And add the path to the **env**.
-```sh
-For bash:
-echo 'export PATH="/usr/bin/android-studio/bin:$PATH"' >> ~/.bash_profile
-```
-```sh
-For zsh:
-echo 'export PATH="/usr/bin/android-studio/bin:$PATH"' >> ~/.zshenv
-```
-
-### 4. Setup Flutter for VS Code
-- In **VS Code**, open the **Command Palette** with `CTRL + Shift + P`, then type `flutter`.
-- Select `Flutter: New Project`.<br/>
-- At this point, you should have your **Flutter SDK** installed, so click `Locate SDK`. If you are prompted with `Which Flutter template?`, ignore it and press the `Esc` key.
+- Now that everything is set up, we can finally get into the real deal: making our first **Android app with Flutter**!
+- We will assume that you are using **Android Studio** for the sake of this workshop, but don't hesitate to go check the optional 5th step of the **[Setup Guide](./Setup.md)**, to set up the project with **VS Code**
+- Launch **Android Studio** and select `New Flutter Project`. Your **Flutter SDK** should already be selected as `/usr/bin/flutter`, if not, run `flutter doctor` and see if **Android Toolchain** is green. Click `Next`.
+- Name your project however you like (name it `workshop_flutter` if you have no idea what to put) and select the directory you created for this workshop as the project location. `Kotlin` and `Swift` should be selected for **Android language** and **iOS language** respectively; and only check the `Android` box (we don't need the other plateforms for this workshop, but you can keep them if you don't mind wasting space on your disk). Click `Create`.
+- Select your **Android emulator** or your **Android device** in the top right hand corner to indicate on which plateform to launch the program.
+<br/>
+<br/>
+![Select device](./readme-assets/select_device.png)
+<br/>
+- Now hit `Run` and you'll have started your very first **Flutter Android app**!
